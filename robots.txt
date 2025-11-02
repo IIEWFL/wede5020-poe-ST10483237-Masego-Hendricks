@@ -1,0 +1,6 @@
+# robots.txt for Reba's GLOW
+User-agent: *
+Allow: /
+
+# Sitemap link (add your real link once hosted)
+Sitemap: https://rebasglow.co.za/sitemap.xml

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Reba’s GLOW</title>
+  <link rel="stylesheet" href="css-assests/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Reba’s GLOW</h1>
+  </header>
+
+  <main>
+    <section class="contact-info">
+      <!--Contact information-->
+      <h2>Contact Information</h2>
+      <h4>Telephone</h4>
+      <p>081 123 4568</p>
+      <h4>Email</h4>
+      <p>rebasglow@gmail.com</p>
+    </section>
+
+    <!--Enquiry form-->
+    <section class="form-section">
+      <h2>Send Us a Message</h2>
+      <p>Have a question or message for Reba’s GLOW? Fill out the form below and we’ll get back to you soon.</p>
+      <form action="enquiry-confirmation.html" method="post"></form>
+
+      <form id="contactForm" action="#" method="POST" novalidate>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+        <label for="messageType">Message Type:</label>
+        <select id="messageType" name="messageType" required>
+          <option value="">-- Select a Message Type --</option>
+          <option value="General Enquiry">General Enquiry</option>
+          <option value="Feedback">Feedback</option>
+          <option value="Collaboration">Collaboration Request</option>
+        </select>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <p id="contactResponse"></p>
+    </section>
+
+    <section class="maps">
+      <h2>Our Locations</h2>
+      <h4>Louisville Student Accommodation</h4>
+       <!--Embed the first Map-->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.409286436148!2d28.135548375409094!3d-26.0201611771904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956dc247c02279%3A0xad75678298fcc7b6!2sLouisville%20Student%20Accommodation%20Midrand!5e0!3m2!1sen!2sza!4v1756210662493!5m2!1sen!2sza" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+      <h4>Respublica Princeton Village</h4>
+      <!--Embed the second map-->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.366557599537!2d28.130439375192235!3d-26.021559877189492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956d65f108f191%3A0xe7aaa9283a12fcfc!2sRespublica%20Princeton%20Village!5e0!3m2!1sen!2sza!4v1756210951191!5m2!1sen!2sza" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <footer>© 2025 Reba’s GLOW. All rights reserved.</footer>
+
+<script src="JavaScript/scripts.js"></script>
+</body>
+</html>
+
+
+<!-- Code Attribution -->
+<!-- Author: Google Maps -->
+<!-- Source: Google Maps Embed API -->
+<!-- Link: https://www.google.com/maps -->
