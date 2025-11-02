@@ -1,5 +1,4 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/tTf6Ywae)
->>>>>>> f07c0152f7f3aa33efe77897d58e76af21d551be
 
 <strong>Project Title:</strong>
 WEB DEVELOPMENT (Introduction) POE 
