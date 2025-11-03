@@ -59,27 +59,79 @@ a:hover, a:focus {
     color: white;
 }
 
-/*3. Layout Structure */
+/* Layout Structure */
 
-/* Header */
+/* HEADER LAYOUT */
 header {
-    background: #d5adc1;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
+  background-color: #aa6082;
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
-.slogan {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+.branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .logo {
-    height: 3.5rem; /* responsive height */
-    width: auto;
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
 }
+
+.brand-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #d4af37;
+  margin: 0;
+}
+
+.slogan {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin: 0.3rem 0 0;
+}
+
+/* Nav styling */
+nav {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  background-color: #e691b7;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 0.3rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* Social icons */
+.socials {
+  margin-top: 1rem;
+}
+
+.socials a {
+  color: black;
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #d4af37;
+}
+
 
 
 /* Navigation */
@@ -267,6 +319,9 @@ img {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 /* Container styles */
 .booking-container {
@@ -515,12 +570,12 @@ section, nav, footer {
     margin-bottom: 2rem;
 }
 
-/* Confirmation Logo (Top Left) */
+/* Confirmation Logo (Centered Above Text) */
 .confirm-logo {
+    display: block;
     width: 110px;
-    position: absolute;
-    top: 20px;
-    left: 30px;
+    margin: 0 auto 1rem auto; 
+    position: static;
 }
 
 .confirmation a {
@@ -535,7 +590,7 @@ section, nav, footer {
 }
 
 .confirmation a:hover {
-    background-color: #e6c14d; /* brighter gold */
+    background-color: #e6c14d; 
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
@@ -567,12 +622,12 @@ section, nav, footer {
     margin-bottom: 2rem;
 }
 
-/* Confirmation Logo (Top Left) */
+/* Confirmation Logo (Centered Above Text) */
 .confirm-logo {
+    display: block;
     width: 110px;
-    position: absolute;
-    top: 20px;
-    left: 30px;
+    margin: 0 auto 1rem auto; 
+    position: static;
 }
 
 .confirmation-enquiry a {
@@ -616,3 +671,50 @@ input[type="submit"]:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
+
+/* IMAGE GALLERY ON HOMEPAGE  */
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; 
+  margin: 2rem 0;
+}
+
+.image-gallery img {
+  width: 250px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Fade-in Animation Effect  */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in animation to both confirmation boxes */
+.confirmation,
+.confirmation-enquiry {
+  animation: fadeSlideIn 1.6s ease forwards;
+  opacity: 0; 
+}
+/* Code Attribution */
+/* Author: W3Schools Team */
+/*Source: CSS Animations Tutorial */
+/*Link: https://www.w3schools.com/cssref/css3_pr_animation.asp */

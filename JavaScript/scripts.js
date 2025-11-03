@@ -1,51 +1,53 @@
-// Accordion Interactivity with Smooth Animation
+// ACCORDION INTERACTIVITY
 const accordions = document.querySelectorAll(".accordion-btn");
 
 accordions.forEach(button => {
   button.addEventListener("click", () => {
     const content = button.nextElementSibling;
 
-    // Close all other accordions smoothly
+    // Close other accordions
     document.querySelectorAll(".accordion-content").forEach(item => {
       if (item !== content) {
         item.style.maxHeight = null;
       }
     });
 
-    // Toggle this accordion
+    // Toggle the selected accordion
     if (content.style.maxHeight) {
-      content.style.maxHeight = null; // close
+      content.style.maxHeight = null;
     } else {
-      content.style.maxHeight = content.scrollHeight + "px"; // open
+      content.style.maxHeight = content.scrollHeight + "px";
     }
   });
 });
 
-//  Lightbox Gallery 
+// LIGHTBOX GALLERY
 const galleryImages = document.querySelectorAll(".gallery-img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const closeBtn = document.getElementById("closeBtn");
 
-galleryImages.forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
+if (lightbox && closeBtn && galleryImages.length > 0) {
+  galleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    });
   });
-});
 
-closeBtn.addEventListener("click", () => {
-  lightbox.style.display = "none";
-});
-
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) {
+  closeBtn.addEventListener("click", () => {
     lightbox.style.display = "none";
-  }
-});
+  });
 
-// Dynamic Services Data
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+}
+
+// DYNAMIC SERVICES DATA
 const servicesData = [
   { name: "Cornrows", price: "R80", image: "_images/Wig lines.png" },
   { name: "Tribal Braids", price: "R250", image: "_images/Long Tribals.png" },
@@ -55,10 +57,19 @@ const servicesData = [
   { name: "Boho Locs", price: "R350", image: "_images/Boho Locs.png" }
 ];
 
-// Dynamically Load Services 
 const serviceList = document.getElementById("serviceList");
+const searchInput = document.getElementById("searchInput");
+const sortSelect = document.getElementById("sortSelect");
 
+// Helper function
+function extractMinPrice(priceStr) {
+  const numbers = priceStr.match(/\d+/g);
+  return numbers ? parseInt(numbers[0]) : 0;
+}
+
+// Display services dynamically
 function displayServices(list) {
+  if (!serviceList) return;
   serviceList.innerHTML = "";
   list.forEach(service => {
     const card = document.createElement("div");
@@ -73,46 +84,47 @@ function displayServices(list) {
 }
 
 // Initial load
-displayServices(servicesData);
+if (serviceList) displayServices(servicesData);
 
-// Search Functionality
-const searchInput = document.getElementById("searchInput");
-
-searchInput.addEventListener("keyup", () => {
-  const searchTerm = searchInput.value.toLowerCase();
-  const filtered = servicesData.filter(service =>
-    service.name.toLowerCase().includes(searchTerm)
-  );
-  displayServices(filtered);
-});
-
-// Sort Functionality
-const sortSelect = document.getElementById("sortSelect");
-
-sortSelect.addEventListener("change", () => {
-  let sorted = [...servicesData]; // copy the data
-
-  if (sortSelect.value === "low-high") {
-    sorted.sort((a, b) => extractMinPrice(a.price) - extractMinPrice(b.price));
-  } else if (sortSelect.value === "high-low") {
-    sorted.sort((a, b) => extractMinPrice(b.price) - extractMinPrice(a.price));
-  }
-
-  const searchTerm = searchInput.value.toLowerCase();
-  const filtered = sorted.filter(service =>
-    service.name.toLowerCase().includes(searchTerm)
-  );
-
-  displayServices(filtered);
-});
-
-// Helper function to extract lowest number from price string 
-function extractMinPrice(priceStr) {
-  const numbers = priceStr.match(/\d+/g);
-  return numbers ? parseInt(numbers[0]) : 0;
+// Search functionality
+if (searchInput) {
+  searchInput.addEventListener("keyup", () => {
+    const term = searchInput.value.toLowerCase();
+    const filtered = servicesData.filter(service =>
+      service.name.toLowerCase().includes(term)
+    );
+    displayServices(filtered);
+  });
 }
 
-// Booking Form Validation
+// Sort functionality
+if (sortSelect) {
+  sortSelect.addEventListener("change", () => {
+    let sorted = [...servicesData];
+
+    if (sortSelect.value === "low-high") {
+      sorted.sort((a, b) => extractMinPrice(a.price) - extractMinPrice(b.price));
+    } else if (sortSelect.value === "high-low") {
+      sorted.sort((a, b) => extractMinPrice(b.price) - extractMinPrice(a.price));
+    }
+
+    //if search box is empty, show all services (don’t filter)
+    if (!searchInput || !searchInput.value.trim()) {
+      displayServices(sorted);
+      return;
+    }
+
+    // Otherwise, filter based on search input
+    const term = searchInput.value.toLowerCase();
+    const filtered = sorted.filter(service =>
+      service.name.toLowerCase().includes(term)
+    );
+    displayServices(filtered);
+  });
+}
+
+
+// BOOKING FORM VALIDATION
 const bookingForm = document.getElementById("bookingForm");
 if (bookingForm) {
   bookingForm.addEventListener("submit", (event) => {
@@ -122,61 +134,87 @@ if (bookingForm) {
     const email = document.getElementById("email");
     const hairstyle = document.getElementById("hairstyle");
     const date = document.getElementById("date");
-    const requests = document.getElementById("requests");
-    const bookingResponse = document.getElementById("bookingResponse");
 
-    // Validate empty fields
-    if (!name.value.trim() || !email.value.trim() || !hairstyle.value || !date.value || !requests.value.trim()) {
-      bookingResponse.textContent = "Please fill in all fields before submitting.";
-      bookingResponse.style.color = "#b30000"; // soft red
-      return;
-    }
+  
+   // Validate required fields (special request is optional)
+  if (!name.value.trim() || !email.value.trim() || hairstyle.value === "" || !date.value) {
+  alert("Please fill in all required fields before submitting (Name, Email, Hairstyle, and Date).");
+  return;
+  }
 
-    // Validate email format
+
+    // Email format
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     if (!email.value.match(emailPattern)) {
-      bookingResponse.textContent = "Please enter a valid email address.";
-      bookingResponse.style.color = "#b30000";
+      alert("Please enter a valid email address.");
       return;
     }
 
-    // Success message
-    bookingResponse.textContent = `Thank you, ${name.value}! Your ${hairstyle.value} appointment request for ${date.value} has been submitted.`;
-    bookingResponse.style.color = "#d4af37"; 
-    bookingForm.reset();
+    // Redirect to confirmation page
+    window.location.href = "booking-confirmation.html";
   });
 }
 
-//Contact/Enquiry Form Validation 
+// ENQUIRY FORM VALIDATION
 const contactForm = document.getElementById("contactForm");
+
 if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    // Clear previous error messages
+    document.querySelectorAll(".error-message").forEach((el) => el.remove());
 
     const name = document.getElementById("fullName");
     const email = document.getElementById("email");
     const type = document.getElementById("messageType");
     const message = document.getElementById("message");
-    const contactResponse = document.getElementById("contactResponse");
 
-    // Validate required fields
-    if (!name.value.trim() || !email.value.trim() || !type.value || !message.value.trim()) {
-      contactResponse.textContent = "Please fill in all fields before sending your message.";
-      contactResponse.style.color = "#b30000";
-      return;
+    let isValid = true;
+
+    // Helper function to show error message
+    function showError(input, message) {
+      const error = document.createElement("p");
+      error.className = "error-message";
+      error.style.color = "red";
+      error.style.fontSize = "0.9em";
+      error.textContent = message;
+      input.insertAdjacentElement("afterend", error);
+      isValid = false;
     }
 
-    // Validate email format
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.value.match(emailPattern)) {
-      contactResponse.textContent = "Please enter a valid email address.";
-      contactResponse.style.color = "#b30000";
-      return;
+    // Validate full name
+    if (!name.value.trim()) {
+      showError(name, "Please enter your full name.");
     }
 
-    // Success message
-    contactResponse.textContent = `Thank you, ${name.value}! Your ${type.value.toLowerCase()} has been sent successfully.`;
-    contactResponse.style.color = "#d4af37";
-    contactForm.reset();
+    // Validate email
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+    if (!email.value.trim()) {
+      showError(email, "Please enter your email address.");
+    } else if (!emailPattern.test(email.value)) {
+      showError(email, "Please enter a valid email address.");
+    }
+
+    // Validate message type
+    if (!type.value) {
+      showError(type, "Please select a message type.");
+    }
+
+    // Validate message content
+    if (!message.value.trim()) {
+      showError(message, "Please enter your enquiry.");
+    }
+
+    // If valid, show success and reset
+    if (isValid) {
+      document.getElementById("contactResponse").textContent =
+        "Thank you! Your message has been sent successfully.";
+      document.getElementById("contactResponse").style.color = "green";
+      contactForm.reset();
+    }
+  
+    // Redirect to enquiry confirmation page
+    window.location.href = "enquiry-confirmation.html";
   });
 }

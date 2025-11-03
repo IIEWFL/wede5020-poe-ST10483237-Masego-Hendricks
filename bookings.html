@@ -16,19 +16,19 @@
         <form action="booking-confirmation.html" method="post">
 
         <!--Different labels-->
-        <label for="Name">Name</label>
+        <label for="Name">Name</label> 
         <br>
-        <input type="text" id="Name" required >
+        <input type="text" id="Name" placeholder="Enter your name" required> 
         <br>
         <label for="Email">Email</label>
         <br>
-        <input type="email" id="Email" required>
+        <input type="email" id="Email" placeholder="Enter your email address" required>
         <br>
         <br>
             <!--Drop down menu for the different hairstyles-->
             <label for="Hairstyle">Hairstyle Type</label>
             <br>
-            <select id="hairstyle" name="hairstyle">
+            <select id="hairstyle" name="hairstyle" required>
                  <option value="">-- Select a Hairstyle --</option>
                 <option value="Natural">Natural cornrows</option>
                 <option value="Cornrows">Tribal Braids</option>
@@ -41,7 +41,7 @@
         <br>
         <!--Link a calender (date picker)-->
         <label for="date">Choose a date:</label>
-        <input type="date" id="date" name="date">
+        <input type="date" id="date" name="date" required>
         <!-- Code Attribution -->
         <!-- Author: W3Schools -->
         <!-- Source: HTML Input Date Picker -->
@@ -49,7 +49,7 @@
         <br>
         <br>
         <label for="Message">Special Requests</label>
-        <textarea id="Requests" name="message" required style="width:100%; height:100px;"></textarea>
+        <textarea id="Requests" name="message" style="width:100%; height:100px;"></textarea>
         <br>
         <br>
              <button type="submit">Submit</button >
