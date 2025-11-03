@@ -85,23 +85,25 @@ Contact (contact.html)
 
 <strong>Screenshot evidence of the different screen sizes</strong> 
 
-<strong>Mobile (iPhone XR)</strong>
+<strong>Mobile (iPhone 14 Pro max)</strong>
 
-<img width="1022" height="914" alt="Screenshot 2025-09-29 121854" src="https://github.com/user-attachments/assets/297f8f22-3e3c-48b5-90ed-5ce40faa3b5b" />
+<img width="1130" height="740" alt="Screenshot 2025-11-03 163027" src="https://github.com/user-attachments/assets/05f3f107-60c5-4d05-9d4f-05c4716fddc8" />
+<img width="1016" height="830" alt="Screenshot 2025-11-03 163002" src="https://github.com/user-attachments/assets/adf36579-5590-4b10-8086-cc8732544c14" />
 
-<img width="1164" height="966" alt="Screenshot 2025-09-29 122750" src="https://github.com/user-attachments/assets/a221d5c0-0e7f-4056-a2f1-7a349221dc11" />
+<strong>Tablet/iPad (iPad Air)</strong>
 
-<strong>Tablet/iPad (iPad Pro)</strong>
+<img width="1096" height="920" alt="Screenshot 2025-11-03 163117" src="https://github.com/user-attachments/assets/96904950-74e9-4070-aa2f-20171b3b68b3" />
+<img width="1072" height="923" alt="Screenshot 2025-11-03 163046" src="https://github.com/user-attachments/assets/d60d28a9-6404-4520-8fe0-14dc835a01c2" />
 
-<img width="1150" height="898" alt="Screenshot 2025-09-29 122853" src="https://github.com/user-attachments/assets/df9fbfa9-1e8e-436d-82a2-44f16939b22e" />
 
-<img width="1167" height="921" alt="Screenshot 2025-09-29 122907" src="https://github.com/user-attachments/assets/63a90a05-edfc-48a7-b1ee-5f673cba9776" />
 
 <strong>Desktop</strong>
 
-<img width="1919" height="953" alt="Screenshot 2025-09-29 123016" src="https://github.com/user-attachments/assets/ec44e54a-efe8-4905-bc45-ba9bdda46c87" />
 
-<img width="1915" height="966" alt="Screenshot 2025-09-29 123041" src="https://github.com/user-attachments/assets/9f71cba7-36db-4c6f-89ea-0604b70c33da" />
+<img width="1885" height="928" alt="Screenshot 2025-11-03 163656" src="https://github.com/user-attachments/assets/0b12d2c2-2ff0-456d-ad29-1011a99e4959" />
+<img width="1893" height="968" alt="Screenshot 2025-11-03 163641" src="https://github.com/user-attachments/assets/fd20c490-7834-4894-9ac0-598f1f58dfc2" />
+
+
 
 <strong>Part 3</strong> (Enhancements, Interactivity & SEO)
 
@@ -128,6 +130,22 @@ Contact (contact.html)
 - Verified **cross-browser compatibility** (Chrome, Edge, Firefox).
 - Ensured website security through HTTPS links and validated input handling.
 - Updated **scripts.js** to manage gallery, form, and accordion interactivity simultaneously.
+- Fade-in animation for confirmation pages.
+- Smooth scroll navigation for in-page links.
+- Clickable “Location” link that scrolls directly to the Google Maps section.
+- Form validation for required fields (name, email, message type, message).
+- Responsive layout and styled design for booking and enquiry confirmations.
+
+<strong>3.2 Off-Page SEO</strong>
+
+- <strong>Backlinks:</strong> Shared the Reba’s GLOW website on local business listings such as <em>Google My Business</em>, <em>SalonFinder</em>, and <em>Midrand Small Business Directory</em> to build high-quality backlinks and improve domain authority.
+
+- <strong>Social Media:</strong> Integrated clickable TikTok and Instagram icons across all pages. These platforms promote new hairstyles, booking links, and customer testimonials, driving traffic back to the website.
+
+- <strong>Local SEO:</strong> Embedded Google Maps for both operating locations (Louisville and Princeton Village) to strengthen local search ranking for “hair salons near me” in the Midrand area.
+
+- <strong>Engagement:</strong> Encouraged clients to tag Reba’s GLOW on social posts and reviews to boost trust and improve brand visibility.
+
 
 <strong>References</strong>
 
